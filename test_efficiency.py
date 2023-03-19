@@ -13,10 +13,17 @@ if __name__ == '__main__':
 
     # inefficient
     for movie in Movie.objects.all():
-        print(movie.name, movie.director)
+        print(movie.name, movie.director.name)
 
     # for movie in Movie.objects.all().select_related('director'):
-    #     print(movie.name, movie.director)
+    #     print(movie.name, movie.director.name)
 
     # for movie in Movie.objects.all().prefetch_related('director'):
-    #     print(movie.name, movie.director)
+    #     print(movie.name, movie.director.name)
+
+    # director = Director.objects.get(pk=1)
+    # print(director.director_movies.all())
+
+    # directors = Director.objects.all().prefetch_related('director_movies')
+    # for d in directors:
+    #     print(d.director_movies.all())
