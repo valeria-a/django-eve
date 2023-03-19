@@ -11,6 +11,10 @@ class Director(models.Model):
     birth_date = models.DateField()
 
 
+class Actor(models.Model):
+
+    pass
+
 # Create your models here.
 class Movie(models.Model):
 
