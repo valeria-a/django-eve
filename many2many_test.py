@@ -45,5 +45,29 @@ from movies_app.models import *
 # a = Actor.objects.get(id=3)
 # a.movie_set.add(Movie(name='bbbb', year=1999))
 
+# create new actor for movie
+titanic_movie = Movie.objects.get(name__iexact='titanic')
+# will not work - need to add movieActor fields
+# titanic_movie.actors.create(
+#     name='Kate Winslet', birth_year=1975)
+
+# titanic_movie.actors.create(
+#     name='Bill Paxton', birth_year=1972,
+#     through_defaults={'salary': 5000000, 'main_role': True}
+# )
+
+# Add existing actor for movie
+billy = Actor.objects.get(name__icontains='billy')
+# will not work
+# titanic_movie.actors.add(billy)
+
+# will work
+# titanic_movie.actors.add(
+#     billy,
+#     through_defaults={'salary': 270000, 'main_role': False})
 
 
+# Remove actor from the movie
+# titanic_movie.actors.remove(billy)
+
+# titanic_movie.actors.clear()
