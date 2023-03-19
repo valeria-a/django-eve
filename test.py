@@ -62,6 +62,7 @@ if __name__ == '__main__':
     # movie.save()
 
     director = Director.objects.get(pk=1)
-    print(director.movie_set.all())
+    # print(director.movie_set.all())
+    print(director.director_movies.all())
 
     # Director.objects

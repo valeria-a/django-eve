@@ -22,6 +22,7 @@ class Movie(models.Model):
     year = models.IntegerField(null=False, blank=False)
     description = models.TextField(null=True, blank=True)
     poster_url = models.CharField(null=True, blank=True, max_length=256)
+    # director = models.ForeignKey(to=Director, on_delete=RESTRICT, null=True, blank=True, related_name='director_movies')
     director = models.ForeignKey(to=Director, on_delete=RESTRICT, null=True, blank=True)
 
     def __str__(self):
